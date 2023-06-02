@@ -22,7 +22,7 @@ function steps(n) {
   for (let i = 1; i <= n; i++) {
     words = "#";
     for (let j = 1; j < n; j++) {
-      if (i < j || i === j) {
+      if (i <= j) {
         words = words + " ";
       } else words = words + "#";
     }
