@@ -47,6 +47,7 @@ class Tree {
       fn(node);
     }
   }
+  å;
 }
 
 const node = new Node(1);
