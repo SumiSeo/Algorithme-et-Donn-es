@@ -27,11 +27,34 @@
 //   return result[n];
 // }
 
-function fib(n) {
+// function fib(n) {
+//   //recursive solution
+//   if (n < 2) {
+//     return n;
+//   }
+//   return fib(n - 1) + fib(n - 2);
+// }
+
+function memoize(fn) {
+  //declare storage area for arguments and its result
+  const cache = {};
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result;
+  };
+}
+
+function slowFib(n) {
   //recursive solution
   if (n < 2) {
     return n;
   }
   return fib(n - 1) + fib(n - 2);
 }
+const fib = memoize(slowFib);
+
 module.exports = fib;
