@@ -48,13 +48,13 @@ function memoize(fn) {
   };
 }
 
-function slowFib(n) {
+function fib(n) {
   //recursive solution
   if (n < 2) {
     return n;
   }
   return fib(n - 1) + fib(n - 2);
 }
-const fib = memoize(slowFib);
+fib = memoize(fib);
 
 module.exports = fib;
