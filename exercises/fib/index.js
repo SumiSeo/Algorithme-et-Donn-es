@@ -18,13 +18,20 @@
 //   return result[n];
 // }
 
+// function fib(n) {
+//   const result = [0, 1];
+//   for (let i = 2; i <= n; i++) {
+//     result[i] = result[i - 2] + result[i - 1];
+//   }
+
+//   return result[n];
+// }
+
 function fib(n) {
-  const result = [0, 1];
-  for (let i = 2; i <= n; i++) {
-    result[i] = result[i - 2] + result[i - 1];
+  //recursive solution
+  if (n < 2) {
+    return n;
   }
-
-  return result[n];
+  return fib(n - 1) + fib(n - 2);
 }
-
 module.exports = fib;
