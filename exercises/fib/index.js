@@ -55,6 +55,7 @@ function fib(n) {
   }
   return fib(n - 1) + fib(n - 2);
 }
+
 fib = memoize(fib);
 
 module.exports = fib;
