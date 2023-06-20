@@ -13,20 +13,18 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
-
   insertFirst(data) {
-    const n = new Node(data, this.head);
-    this.head = n;
+    this.head = new Node(data, this.head);
   }
-
   size() {
-    //loop over node until the next value is over
     let counter = 0;
     let node = this.head;
+
     while (node) {
       counter++;
       node = node.next;
     }
+
     return counter;
   }
 
@@ -38,7 +36,6 @@ class LinkedList {
     if (!this.head) {
       return null;
     }
-
     let node = this.head;
     while (node) {
       if (!node.next) {
