@@ -79,6 +79,7 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
+  getAt() {}
 }
 
 module.exports = { Node, LinkedList };
